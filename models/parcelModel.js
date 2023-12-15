@@ -4,10 +4,11 @@ const parcelSchema = new mongoose.Schema({
   id_parcel: {
     type: Number,
     required: true,
-    unique: true, 
+    unique: true,
   },
   worker: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Workers',
     required: true,
   },
   destination: {
@@ -15,6 +16,10 @@ const parcelSchema = new mongoose.Schema({
     required: true,
   },
   contents: {
+    type: String,
+    required: true,
+  },
+  status: {
     type: String,
     required: true,
   },

@@ -26,6 +26,11 @@ const productSchema = new mongoose.Schema({
     type: String, 
     required: true,
   },
+  wareHouse: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'WareHouse',
+    required: true,
+  },
 
 });
 
