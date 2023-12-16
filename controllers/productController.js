@@ -8,4 +8,23 @@ exports.productsList = async function (req, res) {
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
-};
+}
+
+exports.productCreate = async (req, res) => {
+    let product = new Product({
+        name: req.body.name, 
+        quantity: req.body.quantity, 
+        price: req.body.price, 
+        description: req.body.description,
+        picture: req.body.picture,
+        wareHouse: req.body.wareHouse
+      })
+    await wareHouse.save()
+        .then(data => {
+            console.log(wareHouse.toJSON());
+            res.json(data);
+        })
+        .catch(err => {
+            res.status(500).json({ message: err.message })
+        })
+}

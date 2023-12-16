@@ -1,16 +1,11 @@
 const mongoose = require('mongoose');
 
 const wareHouselSchema = new mongoose.Schema({
-  id_wareHouse: {
-    type: Number,
-    required: true,
-    unique: true,
-  },
-  name_wareHouse: {
+  wareHouse_name: {
     type: String, 
     required: true,
   },
-  adress_wareHouse: {
+  wareHouse_adress: {
     type: String,
     required: true,
   },

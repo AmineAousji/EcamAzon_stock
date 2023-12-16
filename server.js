@@ -11,8 +11,10 @@ require('dotenv').config();
 
 const mongoose = require('mongoose');
 const Stock = require('./mongodb');
-const Parcel = require('./models/parcelModel');
-const Products = require('./models/productModel');
+// const Parcel = require('./models/parcelModel');
+// const Products = require('./models/productModel');
+// const WareHouse = require('./models/wareHouseModel');
+// const Worker = require('./models/workersModel');
 
 
 // Stock.once('open', async () => {

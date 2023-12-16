@@ -25,7 +25,6 @@ const parcelSchema = new mongoose.Schema({
   },
 });
 
-// Create the Category model based on the schema
 const Parcels = mongoose.model('Parcels', parcelSchema);
 
 module.exports = Parcels;

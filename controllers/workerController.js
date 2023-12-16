@@ -1,4 +1,17 @@
-const Worker = require('../models/worker'); 
+const Worker = require('../models/workersModel'); 
+
+
+exports.workerCreate = async (req, res) => {
+  let worker = new Worker({ name: req.body.name, surname: req.body.surname, password: req.body.password })
+  await worker.save()
+      .then(data => {
+          console.log(worker.toJSON());
+          res.json(data);
+      })
+      .catch(err => {
+          res.status(500).json({ message: err.message })
+      })
+}
 
 exports.checkWorker = async function (req, res) {
   console.log(req.body.name);
