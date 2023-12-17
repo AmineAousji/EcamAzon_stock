@@ -22,9 +22,11 @@ isAuthorized = function(req,res,next){
 
 const parcelsController = require('./controllers/parcelController');
 router.get('/parcels/list', parcelsController.parcelsList);
+router.post('/parcels/', parcelsController.parcelCreate);
 
 const productsController = require('./controllers/productController');
 router.get('/products/list', productsController.productsList);
+router.post('/products/', productsController.productCreate);
 
 const wareHouseController = require('./controllers/wareHouseController');
 router.post('/warehouses/', wareHouseController.wareHouseCreate);
@@ -36,7 +38,7 @@ router.post('/check/', workersController.checkWorker);
 router.post('/login', async function (req, res, next) {
     const jwtKey = "my_secret_key"
     const jwtExpirySeconds = 300
-    let payload = { name: req.body.name };
+    let payload = {name: req.body.name };
     let token = jwt.sign(payload, jwtKey, {
     algorithm: "HS256",
     expiresIn: jwtExpirySeconds,

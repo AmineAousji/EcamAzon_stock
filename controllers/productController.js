@@ -19,9 +19,9 @@ exports.productCreate = async (req, res) => {
         picture: req.body.picture,
         wareHouse: req.body.wareHouse
       })
-    await wareHouse.save()
+    await product.save()
         .then(data => {
-            console.log(wareHouse.toJSON());
+            console.log(product.toJSON());
             res.json(data);
         })
         .catch(err => {

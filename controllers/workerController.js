@@ -15,11 +15,12 @@ exports.workerCreate = async (req, res) => {
 
 exports.checkWorker = async function (req, res) {
   console.log(req.body.name);
+  console.log(req.body.password);
 
   if (req.body.name && req.body.password) {
     try {
-      const data = await Worker.findOne({ name: req.body.name, password: req.body.password });
-
+      const data = await Worker.findOne({name:req.body.name, password: req.body.password});
+      console.log(data)
       if (data) {
         console.log(data);
         res.json(data);
