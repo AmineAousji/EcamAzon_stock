@@ -13,7 +13,6 @@ exports.parcelsList = async function (req, res) {
 exports.parcelCreate = async (req, res) => {
     let parcel = new Parcel({
         worker: req.body.worker, 
-        destination: req.body.destination, 
         contents: req.body.contents, 
         status: req.body.status,
         id_user: req.body.id_user,        

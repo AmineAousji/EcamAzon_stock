@@ -16,20 +16,6 @@ const Stock = require('./mongodb');
 // const WareHouse = require('./models/wareHouseModel');
 // const Worker = require('./models/workersModel');
 
-
-// const newWareHouse = new WareHouse({
-//     wareHouse_name: 'wareHouse 1',
-//     wareHouse_adress: 'rue de la loi 11',
-//   });
-  
-//   newWareHouse.save()
-//     .then(savedWareHouse => {
-//       console.log('warehouse saved:', savedWareHouse);
-//     })
-//     .catch(error => {
-//       console.error('Error saving warehouse:', error);
-//     });
-
 let router = require('./routes');
 app.use('/api', router);
 

@@ -19,7 +19,6 @@ isAuthorized = function(req,res,next){
     }
 }
 
-
 const parcelsController = require('./controllers/parcelController');
 router.get('/parcels/list', parcelsController.parcelsList);
 router.post('/parcels/', parcelsController.parcelCreate);

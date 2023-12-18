@@ -11,10 +11,6 @@ const parcelSchema = new mongoose.Schema({
     type: String,
     required: true, 
   },
-  destination: {
-    type: String,
-    required: true,
-  },
   contents: {
     type: String,
     required: true,
