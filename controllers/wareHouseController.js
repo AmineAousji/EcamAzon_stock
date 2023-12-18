@@ -11,3 +11,13 @@ exports.wareHouseCreate = async (req, res) => {
             res.status(500).json({ message: err.message })
         })
 }
+
+exports.wareHouseList = async function (req, res) {
+    try {
+        const data = await WareHouse.find({});
+        console.log("All WareHouses :", JSON.stringify(data, null, 2));
+        res.json(data);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};

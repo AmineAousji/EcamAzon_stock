@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema({
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
   description: {
@@ -22,7 +22,7 @@ const productSchema = new mongoose.Schema({
     required: true,
   },
   wareHouse: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     ref: 'WareHouse',
     required: true,
   },

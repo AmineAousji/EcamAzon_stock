@@ -30,6 +30,7 @@ router.post('/products/', productsController.productCreate);
 
 const wareHouseController = require('./controllers/wareHouseController');
 router.post('/warehouses/', wareHouseController.wareHouseCreate);
+router.get('/warehouses/list', wareHouseController.wareHouseList);
 
 const workersController = require('./controllers/workerController');
 router.post('/workers/', workersController.workerCreate);

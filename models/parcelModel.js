@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const parcelSchema = new mongoose.Schema({
+  // worker: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'Workers',
+  //   required: false,
+  // },
   worker: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Workers',
-    required: false,
-  },
-  workerName: {
     type: String,
-    default: '', 
+    required: true, 
   },
   destination: {
     type: String,
@@ -33,17 +33,17 @@ const parcelSchema = new mongoose.Schema({
   },
 });
 
-parcelSchema.pre('save', async function (next) {
-  try {
-    const worker = await mongoose.model('Workers').findOne({ _id: this.worker });
-    if (worker) {
-      this.workerName = `${worker.name}`;
-    }
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
+// parcelSchema.pre('save', async function (next) {
+//   try {
+//     const worker = await mongoose.model('Workers').findOne({ _id: this.worker });
+//     if (worker) {
+//       this.workerName = `${worker.name}`;
+//     }
+//     next();
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 const Parcels = mongoose.model('Parcels', parcelSchema);
 
 module.exports = Parcels;

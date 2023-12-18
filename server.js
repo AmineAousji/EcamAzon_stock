@@ -11,25 +11,23 @@ require('dotenv').config();
 
 const mongoose = require('mongoose');
 const Stock = require('./mongodb');
-const Parcel = require('./models/parcelModel');
+// const Parcel = require('./models/parcelModel');
 // const Products = require('./models/productModel');
 // const WareHouse = require('./models/wareHouseModel');
 // const Worker = require('./models/workersModel');
 
 
-// const newParcel = new Parcel({
-//     worker: '657ce5ba13d42f47a95ecdd3',
-//     destination: 'Destination',
-//     contents: 'Contents',
-//     status: 'Not ready',
+// const newWareHouse = new WareHouse({
+//     wareHouse_name: 'wareHouse 1',
+//     wareHouse_adress: 'rue de la loi 11',
 //   });
   
-//   newParcel.save()
-//     .then(savedParcel => {
-//       console.log('Parcel saved:', savedParcel);
+//   newWareHouse.save()
+//     .then(savedWareHouse => {
+//       console.log('warehouse saved:', savedWareHouse);
 //     })
 //     .catch(error => {
-//       console.error('Error saving parcel:', error);
+//       console.error('Error saving warehouse:', error);
 //     });
 
 let router = require('./routes');
