@@ -2,7 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 // Connexion à MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect('mongodb://127.0.0.1:27117/Stock', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

@@ -23,5 +23,5 @@ app.use(function (req, res, next) {
     res.status(404).json({"error": "path not found"});
 });
 
-let port = 3000;
+let port = 30003;
 app.listen(port, () => console.log('Server is now listening on port ' + port));
