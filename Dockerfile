@@ -14,7 +14,7 @@ RUN npm install --legacy-peer-deps
 COPY . .
 
 # Your app binds to a certain port, make sure you expose it
-EXPOSE 3000
+EXPOSE 30003
 
 # Define the command to run your app
 CMD ["node", "server.js"]
